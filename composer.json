@@ -1,0 +1,5 @@
+{
+    "name": "cv-generator/local",
+    "description": "CV generator - PDF export is dependency-free and works locally with XAMPP.",
+    "require": {}
+}

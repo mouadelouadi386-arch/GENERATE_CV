@@ -1,0 +1,327 @@
+/* ==========================================================
+   TEMPLATE 7 - Modern / Timeline
+   ========================================================== */
+
+:root {
+  --text: #14171c;
+  --text-soft: #2b3038;
+  --accent: #3e5c76; /* albastru-gri pentru titlul profesional */
+  --line: #2b2f36;
+  --line-soft: #c9ccd1;
+  --paper: #ffffff;
+  --page-bg: #e9e9e7;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "DM Sans", "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  background: var(--page-bg);
+  line-height: 1.5;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ---------- Pagina A4 ---------- */
+.cv-wrapper {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 20px auto;
+  padding: 40px 0 24px;
+  background: var(--paper);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Header ---------- */
+.cv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin: 0 46px;
+  padding: 26px 0 22px;
+  border-bottom: 1.5px solid var(--line);
+}
+
+.header-info h1 {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.role {
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.contact-list {
+  list-style: none;
+  margin-top: 22px;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12.5px;
+  margin-bottom: 9px;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  fill: var(--accent);
+}
+
+/* ---------- Fotografie ---------- */
+.photo {
+  width: 142px;
+  height: 142px;
+  flex-shrink: 0;
+  border: 3px solid #14213d;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #dfe2e6;
+}
+
+.photo-placeholder {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  color: #3e5c76;
+  font-size: 64px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Corp: 2 coloane ---------- */
+.cv-body {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  flex: 1;
+  margin: 26px 46px 0;
+}
+
+.col-left {
+  padding-right: 20px;
+}
+
+.col-right {
+  padding-left: 22px;
+  border-left: 1px solid var(--line-soft);
+}
+
+section {
+  margin-bottom: 38px;
+}
+
+h2 {
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+/* ---------- Text general ---------- */
+.about {
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--text-soft);
+}
+
+.bullet-list {
+  list-style: none;
+  font-size: 12px;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 9px;
+}
+
+.bullet-list li::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 0.55em;
+  width: 4.5px;
+  height: 4.5px;
+  border-radius: 50%;
+  background: var(--text);
+}
+
+.bullet-list.small {
+  font-size: 11.5px;
+  margin-top: 8px;
+}
+
+.bullet-list.small li {
+  margin-bottom: 7px;
+}
+
+.level {
+  color: var(--text-soft);
+}
+
+/* ---------- Educație ---------- */
+.edu-item {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--text-soft);
+  margin-bottom: 14px;
+}
+
+.edu-item .school {
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ---------- Timeline experiență ---------- */
+.timeline {
+  position: relative;
+}
+
+.exp-item {
+  position: relative;
+  padding-left: 24px;
+  padding-bottom: 26px;
+}
+
+.exp-item:last-child {
+  padding-bottom: 0;
+}
+
+/* punctul (cerc cu centru plin) */
+.exp-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--line) 0 2.5px, var(--paper) 3px);
+  border: 1.5px solid var(--line);
+  z-index: 1;
+}
+
+/* linia verticală care leagă punctele */
+.exp-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 5.5px;
+  top: 14px;
+  bottom: -3px;
+  width: 1.5px;
+  background: var(--line);
+}
+
+.exp-item h3 {
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.exp-item .company {
+  font-size: 12px;
+  margin-top: 4px;
+  color: var(--text-soft);
+}
+
+.exp-item .dates {
+  font-size: 11.5px;
+  margin-top: 2px;
+  color: var(--text-soft);
+}
+
+/* ---------- Informații personale ---------- */
+.personal-row {
+  font-size: 12px;
+  color: var(--text-soft);
+  margin-bottom: 8px;
+}
+
+/* ---------- Linie de subsol ---------- */
+.cv-footer-line {
+  margin: 10px 46px 0;
+  border-top: 1.5px solid var(--line);
+}
+
+/* ---------- Responsive ---------- */
+@media screen and (max-width: 820px) {
+  .cv-wrapper {
+    width: 100%;
+    margin: 0;
+    padding-top: 20px;
+    box-shadow: none;
+  }
+
+  .cv-header {
+    margin: 0 20px;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-list li {
+    justify-content: center;
+  }
+
+  .cv-body {
+    grid-template-columns: 1fr;
+    margin: 24px 20px 0;
+  }
+
+  .col-left {
+    padding-right: 0;
+  }
+
+  .col-right {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .cv-footer-line {
+    margin: 10px 20px 0;
+  }
+}
+
+/* =========================================================
+   STRUCTURE FIX — exact same two-column page before/after PDF
+   ========================================================= */
+@page{size:A4;margin:0}
+html,body{width:900px!important;height:1273px!important;min-width:900px!important;min-height:1273px!important;margin:0!important;padding:0!important;overflow:hidden!important}
+body{position:relative!important;background:var(--page-bg)!important}
+.cv-wrapper{display:flex!important;flex-direction:column!important;width:900px!important;max-width:none!important;height:1273px!important;min-height:1273px!important;margin:0!important;padding:40px 0 24px!important;overflow:hidden!important;box-shadow:none!important}
+.cv-header{display:flex!important;flex-direction:row!important;justify-content:space-between!important;align-items:flex-start!important;gap:24px!important;margin:0 46px!important;padding:26px 0 22px!important;text-align:left!important}
+.contact-list li{justify-content:flex-start!important}.cv-body{display:grid!important;grid-template-columns:40% 60%!important;flex:1!important;margin:26px 46px 0!important}.col-left{padding-right:20px!important}.col-right{padding-left:22px!important;border-left:1px solid var(--line-soft)!important}.cv-footer-line{margin:10px 46px 0!important}
+h1,h2,h3,h4,p,span,li,div{overflow-wrap:anywhere;word-break:break-word}
+@media print{
+  html,body{width:210mm!important;height:297mm!important;min-width:210mm!important;min-height:297mm!important;overflow:hidden!important;background:#fff!important}
+  .cv-wrapper{display:flex!important;flex-direction:column!important;width:900px!important;max-width:none!important;height:1273px!important;min-height:1273px!important;margin:0!important;padding:40px 0 24px!important;transform:scale(.88179)!important;transform-origin:top left!important;box-shadow:none!important;overflow:hidden!important}
+  .cv-header{display:flex!important;flex-direction:row!important;justify-content:space-between!important;align-items:flex-start!important;gap:24px!important;margin:0 46px!important;padding:26px 0 22px!important;text-align:left!important}.contact-list li{justify-content:flex-start!important}.cv-body{display:grid!important;grid-template-columns:40% 60%!important;flex:1!important;margin:26px 46px 0!important}.col-left{padding-right:20px!important}.col-right{padding-left:22px!important;border-left:1px solid var(--line-soft)!important}.cv-footer-line{margin:10px 46px 0!important}
+}

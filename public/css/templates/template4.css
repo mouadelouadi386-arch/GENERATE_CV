@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  background: #fdfcf8;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #2a2a2a;
+}
+.cv-wrapper {
+  max-width: 760px;
+  margin: 40px auto;
+  padding: 46px 56px;
+  background: #fff;
+  border: 1px solid #e4ddc9;
+}
+header {
+  text-align: center;
+  border-bottom: 2px solid #8a7449;
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+}
+.profile-photo {
+  width: 112px;
+  height: 112px;
+  overflow: hidden;
+  margin: 0 auto 15px;
+  border: 4px solid #e4ddc9;
+  border-radius: 50%;
+  background: #f2eee5;
+}
+.profile-photo .avatar,
+.profile-photo .avatar-placeholder {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  border-radius: 50%;
+}
+.profile-photo .avatar { object-fit: cover; }
+.profile-photo .avatar-placeholder {
+  color: #8a7449;
+  font-size: 52px;
+  font-weight: 700;
+}
+header h1 {
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: 1px;
+  color: #3a2f1f;
+}
+header .role {
+  font-style: italic;
+  color: #8a7449;
+  margin-top: 4px;
+  font-size: 15px;
+}
+.contact-line {
+  margin-top: 10px;
+  font-size: 12.5px;
+  color: #555;
+}
+.contact-line span:not(:last-child)::after {
+  content: " | ";
+  color: #bbb;
+}
+h3 {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #3a2f1f;
+  border-bottom: 1px solid #e4ddc9;
+  padding-bottom: 6px;
+  margin: 26px 0 14px;
+}
+p.about {
+  font-size: 14px;
+  line-height: 1.75;
+  text-align: justify;
+}
+.exp-item,
+.edu-item {
+  margin-bottom: 16px;
+}
+.row-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  font-weight: bold;
+  color: #3a2f1f;
+}
+.meta {
+  font-size: 13px;
+  font-style: italic;
+  color: #8a7449;
+  margin: 2px 0 6px;
+}
+.desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #444;
+}
+table.skills-table,
+table.lang-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+table.skills-table td,
+table.lang-table td {
+  padding: 5px 0;
+  border-bottom: 1px dotted #ddd;
+}
+table.skills-table td:last-child,
+table.lang-table td:last-child {
+  text-align: right;
+  color: #8a7449;
+}
+
+/* =========================================================
+   STRUCTURE FIX — classic layout on one stable A4 canvas
+   ========================================================= */
+*,*::before,*::after{box-sizing:border-box}
+@page{size:A4;margin:0}
+html,body{width:900px!important;height:1273px!important;min-width:900px!important;min-height:1273px!important;margin:0!important;padding:0!important;overflow:hidden!important}
+body{position:relative!important;background:#fdfcf8!important}
+.cv-wrapper{width:900px!important;max-width:none!important;height:1273px!important;min-height:1273px!important;margin:0!important;padding:48px 66px 42px!important;overflow:hidden!important;background:#fff!important;border:1px solid #e4ddc9!important;box-shadow:none!important}
+header{margin-bottom:22px!important}
+h3{margin:22px 0 12px!important}
+.exp-item,.edu-item{margin-bottom:14px!important}
+.row-top{gap:18px}.row-top span:first-child{min-width:0;overflow-wrap:anywhere}.row-top span:last-child{flex:0 0 auto;white-space:nowrap}
+.desc,p.about{overflow-wrap:anywhere;word-break:break-word}
+@media print{
+  html,body{width:210mm!important;height:297mm!important;min-width:210mm!important;min-height:297mm!important;overflow:hidden!important;background:#fff!important}
+  .cv-wrapper{width:900px!important;max-width:none!important;height:1273px!important;min-height:1273px!important;margin:0!important;padding:48px 66px 42px!important;transform:scale(.88179)!important;transform-origin:top left!important;box-shadow:none!important;overflow:hidden!important}
+}

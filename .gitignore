@@ -1,0 +1,19 @@
+# Fichiers d'environnement locaux (sauf le modèle partageable)
+/.env
+/.env.*
+!/.env.example
+
+# Fichiers générés par l'application ou contenant des données personnelles
+/public/uploads/
+/public/assets/uploads/*
+!/public/assets/uploads/.gitkeep
+
+# Configuration locale de l'éditeur
+.vscode/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Dépendances Composer
+/vendor/

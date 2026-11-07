@@ -1,0 +1,416 @@
+* {
+  box-sizing: border-box;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #eeeeef;
+  color: #28272c;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.cv-wrapper {
+  width: 100%;
+  max-width: 900px;
+  min-height: 1273px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Header */
+.cv-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 230px;
+  margin-top: 70px;
+  background: #35343f;
+  color: #fff;
+}
+
+.header-photo {
+  position: absolute;
+  z-index: 2;
+  top: -43px;
+  left: 4.2%;
+  width: 32%;
+  max-width: 285px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  background: #b8b8b8;
+}
+
+.avatar,
+.avatar-placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.avatar {
+  object-fit: cover;
+  object-position: center;
+}
+
+.avatar-placeholder {
+  display: grid;
+  place-items: center;
+  background: #777;
+  color: #fff;
+  font-size: 100px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.header-identity {
+  width: 56%;
+  margin-left: 46%;
+  padding: 24px 30px 24px 0;
+}
+
+.header-identity h1 {
+  max-width: 100%;
+  margin: 0;
+  font-size: clamp(38px, 7vw, 62px);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 0.98;
+  overflow-wrap: anywhere;
+}
+
+.role {
+  margin-top: 18px;
+  font-size: clamp(18px, 3vw, 25px);
+  font-weight: 400;
+}
+
+/* Main two-column layout */
+.cv-body {
+  display: grid;
+  grid-template-columns: 39% 61%;
+  min-height: 973px;
+}
+
+.sidebar {
+  padding: 72px 48px 55px;
+  background: #dedcdf;
+}
+
+.main {
+  padding: 72px 58px 55px;
+  background: #fff;
+}
+
+.sidebar-section,
+.main-section {
+  margin: 0 0 44px;
+}
+
+.sidebar-section:last-child,
+.main-section:last-child {
+  margin-bottom: 0;
+}
+
+/* Section headings */
+.sidebar h3,
+.main h3 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 20px;
+  color: #25242a;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.sidebar h3::before,
+.main h3::before {
+  display: inline-grid;
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  color: #27262c;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.about-section h3::before {
+  content: "●";
+  font-size: 22px;
+}
+
+.contact-section h3::before {
+  content: "▣";
+}
+
+.skills-section h3::before {
+  content: "⚙";
+}
+
+.languages-section h3::before {
+  content: "文";
+}
+
+.education-section h3::before {
+  content: "◆";
+}
+
+.experience-section h3::before {
+  content: "▣";
+}
+
+/* Sidebar content */
+.about {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: justify;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin: 0 0 17px;
+  font-size: 15px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.contact-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact-item > span {
+  min-width: 0;
+}
+
+.skill-bar {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 0 0 15px;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.skill-bar::before {
+  flex: 0 0 auto;
+  content: "•";
+  font-size: 19px;
+  line-height: 1.1;
+}
+
+.skill-bar .name {
+  overflow-wrap: anywhere;
+}
+
+/* The original PHP skill-level markup is retained; the reference design uses bullets. */
+.skill-bar .track {
+  display: none;
+}
+
+.lang-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 0 15px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.lang-item::before {
+  flex: 0 0 auto;
+  content: "•";
+  font-size: 19px;
+  line-height: 1;
+}
+
+.lang-item span:first-child {
+  flex: 1;
+}
+
+.lang-item span:last-child {
+  color: #55535b;
+  font-size: 13px;
+  text-align: right;
+}
+
+/* Education and experience timeline items */
+.edu-item,
+.exp-item {
+  position: relative;
+  margin: 0 0 32px;
+  padding-left: 34px;
+}
+
+.edu-item:last-child,
+.exp-item:last-child {
+  margin-bottom: 0;
+}
+
+.edu-item::before,
+.exp-item::before {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #38373d;
+  content: "";
+}
+
+.row-top {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.row-top span:last-child {
+  order: -1;
+  color: #35343a;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.row-top span:first-child {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.exp-item .row-top span:first-child {
+  text-transform: uppercase;
+}
+
+.school,
+.company {
+  margin-top: 3px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.school {
+  font-weight: 700;
+}
+
+.desc {
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.45;
+  white-space: pre-line;
+}
+
+/* Smaller screens */
+@media screen and (max-width: 700px) {
+  .cv-wrapper {
+    min-height: 100vh;
+  }
+
+  .cv-header {
+    min-height: 190px;
+    margin-top: 35px;
+  }
+
+  .header-photo {
+    top: -22px;
+    left: 4%;
+    width: 34%;
+    border-width: 4px;
+  }
+
+  .header-identity {
+    width: 58%;
+    margin-left: 43%;
+    padding-right: 16px;
+  }
+
+  .header-identity h1 {
+    letter-spacing: 0.08em;
+  }
+
+  .cv-body {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar,
+  .main {
+    padding: 38px 30px;
+  }
+
+  .sidebar {
+    order: 1;
+  }
+
+  .main {
+    order: 2;
+  }
+}
+
+/* Print */
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .cv-wrapper {
+    width: 210mm;
+    max-width: none;
+    min-height: 297mm;
+    margin: 0;
+  }
+
+  .cv-header {
+    margin-top: 16mm;
+  }
+
+  .cv-body {
+    min-height: 227mm;
+  }
+}
+
+/* =========================================================
+   STRUCTURE FIX — same geometry in preview and PDF
+   ========================================================= */
+html,body{width:900px!important;height:1273px!important;min-width:900px!important;min-height:1273px!important;margin:0!important;padding:0!important;overflow:hidden!important}
+body{position:relative!important}
+.cv-wrapper{width:900px!important;max-width:none!important;height:1273px!important;min-height:1273px!important;margin:0!important;overflow:hidden!important;box-shadow:none!important}
+.cv-header{margin-top:70px!important}
+.cv-body{grid-template-columns:39% 61%!important;min-height:973px!important}
+.sidebar{padding:72px 48px 55px!important}
+.main{padding:72px 58px 55px!important}
+h1,h2,h3,h4,p,span,div{overflow-wrap:anywhere;word-break:break-word}
+@media print{
+  @page{size:A4;margin:0}
+  html,body{width:210mm!important;height:297mm!important;min-width:210mm!important;min-height:297mm!important;overflow:hidden!important;background:#fff!important}
+  .cv-wrapper{width:900px!important;max-width:none!important;height:1273px!important;min-height:1273px!important;margin:0!important;transform:scale(.88179)!important;transform-origin:top left!important;box-shadow:none!important;overflow:hidden!important}
+  .cv-header{margin-top:70px!important;min-height:230px!important}
+  .cv-body{display:grid!important;grid-template-columns:39% 61%!important;min-height:973px!important}
+  .sidebar{order:initial!important;padding:72px 48px 55px!important}
+  .main{order:initial!important;padding:72px 58px 55px!important}
+}
+/* Final vertical balance: keep all sections comfortably inside the page. */
+.sidebar{padding-top:56px!important;padding-bottom:42px!important}.main{padding-top:56px!important;padding-bottom:42px!important}.sidebar-section,.main-section{margin-bottom:32px!important}.edu-item,.exp-item{margin-bottom:25px!important}
+@media print{.sidebar{padding-top:56px!important;padding-bottom:42px!important}.main{padding-top:56px!important;padding-bottom:42px!important}.sidebar-section,.main-section{margin-bottom:32px!important}.edu-item,.exp-item{margin-bottom:25px!important}}
